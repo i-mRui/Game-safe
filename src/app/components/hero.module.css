@@ -1,0 +1,47 @@
+@import url("../assets/fonts.css");
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 15em 3em 0 0;
+    padding: 1rem 1.2rem;
+}
+
+.heroContent {
+    flex: 1;
+    max-width: 600px;
+    margin-right: 5em;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.description {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-top: 1em;
+    margin-right: .5em;
+    color: white;
+}
+
+.btn {
+    margin: 3em 1em 0 0;
+    padding: 1em 4em;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: transparent;
+    border-radius: 8px;
+    border: 1px solid white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.btn:hover {
+    transform: scale(1.07);
+}
+

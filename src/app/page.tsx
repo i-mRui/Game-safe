@@ -1,95 +1,73 @@
-import Image from "next/image";
+'use client';
+
+import './assets/fonts.css'
 import styles from "./page.module.css";
+// import { useTranslation } from 'react-i18next';
+import Header from './components/Header';
+import Hero from './components/hero';
+import Hyperspeed from './components/backgrounds/hyperspeed';
+import Section2 from './components/Section-2';
+import Resources from './components/Resources';
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  // const { t, i18n } = useTranslation();
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+  // const changeLanguage = (lng: string) => {
+  //   i18n.changeLanguage(lng);
+  // };
+
+  return (
+
+    <div className={styles.page}>
+      <div className={styles.Section}>
+        <Hyperspeed
+              effectOptions={{
+                  onSpeedUp: () => { },
+                  onSlowDown: () => { },
+                  distortion: 'turbulentDistortion',
+                  length: 400,
+                  roadWidth: 10,
+                  islandWidth: 2,
+                  lanesPerRoad: 4,
+                  fov: 90,
+                  fovSpeedUp: 150,
+                  speedUp: 2,
+                  carLightsFade: 0.4,
+                  totalSideLightSticks: 20,
+                  lightPairsPerRoadWay: 40,
+                  shoulderLinesWidthPercentage: 0.05,
+                  brokenLinesWidthPercentage: 0.1,
+                  brokenLinesLengthPercentage: 0.5,
+                  lightStickWidth: [0.12, 0.5],
+                  lightStickHeight: [1.3, 1.7],
+                  movingAwaySpeed: [60, 80],
+                  movingCloserSpeed: [-120, -160],
+                  carLightsLength: [400 * 0.03, 400 * 0.2],
+                  carLightsRadius: [0.05, 0.14],
+                  carWidthPercentage: [0.3, 0.5],
+                  carShiftX: [-0.8, 0.8],
+                  carFloorSeparation: [0, 5],
+                  colors: {
+                  roadColor: 0x080808,
+                  islandColor: 0x0a0a0a,
+                  background: 0x000000,
+                  shoulderLines: 0xFFFFFF,
+                  brokenLines: 0xFFFFFF,
+                  leftCars: [0xD856BF, 0x6750A2, 0xC247AC],
+                  rightCars: [0x03B3C3, 0x0E5EA5, 0x324555],
+                  sticks: 0x03B3C3,
+                  }
+              }}/>
+        <Header />
+        <Hero />
+      </div>
+      <div className={styles.Section}>
+        <Section2 />
+      </div>
+      <div className={styles.Section}>
+        <Resources />
+      </div>
+      
     </div>
   );
 }
