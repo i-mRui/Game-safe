@@ -8,6 +8,7 @@ A modern, multilingual website built with Next.js that focuses on digital safety
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
+- [Components](#components)
 - [Internationalization](#internationalization)
 - [Visual Effects](#visual-effects)
 
@@ -74,7 +75,8 @@ my-app/
 │   │   │   ├── backgrounds/ # Visual effects components
 │   │   │   ├── Header.tsx   # Site header with language switcher
 │   │   │   ├── Hero.tsx     # Hero section component
-│   │   │   └── Section-2.tsx # Grid layout section
+│   │   │   ├── Section-2.tsx # Grid layout section
+│   │   │   └── Resources.tsx # Resources information component
 │   │   ├── globals.css  # Global styles
 │   │   ├── page.tsx     # Main page component
 │   │   └── layout.tsx   # Root layout
@@ -82,6 +84,35 @@ my-app/
 ├── package.json        # Project dependencies
 └── tsconfig.json       # TypeScript configuration
 ```
+
+## Components
+
+The website is built with several key components:
+
+### Header
+- Provides navigation and language switching functionality
+- Supports RTL (Right-to-Left) layout for Arabic and other RTL languages
+- Contains the site logo and main navigation links
+
+### Hero
+- Main landing section with eye-catching visuals
+- Introduces the website's purpose and main message
+- Integrates with the Hyperspeed background effect
+
+### Section-2
+- Features a responsive grid layout (3×2) for displaying cards
+- Each card contains important information about digital safety
+- Properly handles RTL text direction for Arabic content
+
+### Resources
+- Provides educational resources about internet safety
+- Contains cards with translated content using i18next
+- Accessible design with proper heading hierarchy
+
+### Hyperspeed Background
+- Creates an immersive 3D visual experience
+- Built with Three.js for high-performance graphics
+- Responsive design that adapts to different screen sizes
 
 ## Internationalization
 
