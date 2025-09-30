@@ -7,6 +7,7 @@ import './card.css';
 //   // Content goes here
 // </SpotlightCard>
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface Position {
   x: number;
   y: number;

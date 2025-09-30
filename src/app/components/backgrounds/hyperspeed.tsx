@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef, FC } from 'react';
 import * as THREE from 'three';
 import { BloomEffect, EffectComposer, EffectPass, RenderPass, SMAAEffect, SMAAPreset } from 'postprocessing';
@@ -5,7 +6,7 @@ import { BloomEffect, EffectComposer, EffectPass, RenderPass, SMAAEffect, SMAAPr
 import './hyperspeed.css';
 
 interface Distortion {
-  uniforms: Record<string, { value: any }>;
+  uniforms: Record<string, { value: THREE.Vector2 | THREE.Vector3 | THREE.Vector4 | number }>;
   getDistortion: string;
   getJS?: (progress: number, time: number) => THREE.Vector3;
 }
@@ -1213,6 +1214,7 @@ class App {
 }
 
 const Hyperspeed: FC<HyperspeedProps> = ({ effectOptions = {} }) => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const mergedOptions: HyperspeedOptions = {
     ...defaultOptions,
     ...effectOptions
